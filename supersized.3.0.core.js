@@ -9,39 +9,52 @@ Website: www.buildinternet.com/project/supersized
 (function($){
 
 	//Resize image on ready or resize
-	$.fn.supersized = function() {
+	$.fn.supersized = function( options ) {
 		
-		var options = $.extend($.fn.supersized.defaults, $.fn.supersized.options);
+		var element = this;
+		
+		if ( options ) {
+			//Pull from both defaults and supplied options
+			var options = $.extend( {}, $.fn.supersized.defaults, options);
+		}else{
+			//Only pull from default settings
+			var options = $.extend( {}, $.fn.supersized.defaults)
+		}
+		
 		$.currentSlide = 0;
 		
 		//Set current image
-		$("<img/>").attr("src", options.slides[$.currentSlide].image).appendTo("#supersized");
+		$("<img/>").attr("src", options.slides[$.currentSlide].image).appendTo(element);
 		
 		$(window).bind("load", function(){
 			
 			$('#loading').hide();
-			$('#supersized').fadeIn('fast');
-						
-			$('#supersized').resizenow();
+			element.fadeIn('fast');
+
+			resizenow(element, options);
 			
 		});
 				
 		$(document).ready(function() {
-			$('#supersized').resizenow(); 
+			resizenow(element, options);
 		});
 		
 		
 		$(window).bind("resize", function(){
-    		$('#supersized').resizenow(); 
+    		resizenow(element, options); 
 		});
 		
-		$('#supersized').hide();
+		element.hide();
 	};
 	
 	//Adjust image size
-	$.fn.resizenow = function() {
-		var t = $(this);
-		var options = $.extend($.fn.supersized.defaults, $.fn.supersized.options);
+	function resizenow(element, options) {
+		
+		console.log('Testing Stuff');
+		console.log(element);
+		console.log(options);
+		
+		var t = element;
 	  	return t.each(function() {
 	  		
 			//Define image ratio
@@ -81,4 +94,3 @@ Website: www.buildinternet.com/project/supersized
 	};
 	
 })(jQuery);
-

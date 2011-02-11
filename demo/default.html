@@ -21,7 +21,7 @@ Website: www.buildinternet.com/project/supersized
 	<script type="text/javascript" src="../supersized.3.0.js"></script>
 	<script type="text/javascript">  
 		$(function(){
-			$.fn.supersized.options = {  
+	        $('#supersized').supersized({  
 				startwidth: 640,  
 				startheight: 480,
 				vertical_center: 1,
@@ -38,8 +38,7 @@ Website: www.buildinternet.com/project/supersized
 					{image : 'slides/fence.jpg', title : 'Canal Park Fence', url : 'http://www.flickr.com/photos/wumbus/4582735030/sizes/l/in/set-72157623876357531/'},  
 					{image : 'slides/tracks.jpg', title : 'Old Train Tracks', url : 'http://www.flickr.com/photos/wumbus/4582733542/in/set-72157623876357531/'}
 				]
-			};
-	        $('#supersized').supersized(); 
+			}); 
 	    });
 	</script>
 	

@@ -19,15 +19,14 @@ Website: www.buildinternet.com/project/supersized
 	<script type="text/javascript" src="../supersized.3.0.core.js"></script>
 	<script type="text/javascript">  
 		$(function(){
-			$.fn.supersized.options = {  
+	        $('#supersized').supersized({  
 				startwidth: 640,  
 				startheight: 480,
 				vertical_center: 1,
 				slides : [
 					{image : 'slides/fence.jpg' }
 				]
-			};
-	        $('#supersized').supersized(); 
+			}); 
 	    });
 	</script>
 	
