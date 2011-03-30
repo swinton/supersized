@@ -625,6 +625,7 @@
 	    	};
   
 		}
+		$.supersized.next = nextslide;
 		
 		
 		//Previous Slide
@@ -720,6 +721,7 @@
 	    	};
 		    	
 		}
+		$.supersized.prev = prevslide;
 		
 		//After slide animation
 		function afterAnimation() {
